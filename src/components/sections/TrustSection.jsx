@@ -1,21 +1,29 @@
-import { Lock, ShieldCheck, Layers, KeyRound } from "lucide-react";
+import { Database, ShieldCheck, GitBranch, Building2 } from "lucide-react";
 
 const items = [
   {
-    title: "Secure infrastructure",
-    icon: Lock,
+    title: "Structured Athlete Data",
+    description:
+      "Athlete profiles, workload context, goals, seasons, and plans are organized around a connected planning model.",
+    icon: Database,
   },
   {
-    title: "Governed AI workflows",
+    title: "Governed AI Planning",
+    description:
+      "AI assists plan generation within defined context, guardrails, and coach-controlled workflows.",
     icon: ShieldCheck,
   },
   {
-    title: "Scalable platform architecture",
-    icon: Layers,
+    title: "Versioned Plan Workflows",
+    description:
+      "Training plans move through draft, review, approval, and release states with traceable versions.",
+    icon: GitBranch,
   },
   {
-    title: "Role-based access control",
-    icon: KeyRound,
+    title: "Scalable Academy Architecture",
+    description:
+      "Built for multiple roles, athletes, coaches, and programs without losing operational control.",
+    icon: Building2,
   },
 ];
 
@@ -31,15 +39,26 @@ export default function TrustSection() {
         }}
       />
 
-      <div className="container relative mx-auto px-4">
-        <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ title, icon: Icon }) => (
+      <div className="container relative mx-auto min-w-0 max-w-full px-4">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="type-heading-section stack-heading text-balance text-white">
+            Built with governance at the core
+          </h2>
+          <p className="type-lede stack-lede text-slate-300">
+            Peakflow is designed for structured athlete data, controlled AI
+            workflows, and review-based planning — not black-box automation.
+          </p>
+        </div>
+
+        <ul className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ title, description, icon: Icon }) => (
             <li key={title} className="text-center lg:text-left">
-              <span className="mx-auto inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 text-white lg:mx-0">
-                <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+              <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-orange-400/30 bg-orange-500/15 text-orange-300 lg:mx-0">
+                <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
               </span>
-              <p className="mt-4 text-sm font-medium leading-snug text-white">
-                {title}
+              <p className="type-trust-label mt-5 text-white">{title}</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                {description}
               </p>
             </li>
           ))}

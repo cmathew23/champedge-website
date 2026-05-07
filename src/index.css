@@ -1,14 +1,242 @@
+/*
+ * Tailwind CSS v4 loads via @import "tailwindcss" (processed by @tailwindcss/vite).
+ * This replaces the v3 trio:
+ *   @tailwind base;
+ *   @tailwind components;
+ *   @tailwind utilities;
+ * Do not remove the import below — without the Vite plugin + this line, utilities will not generate.
+ */
 @import "tailwindcss";
 
+/*
+ * Champedge / Peakflow — typography tokens & semantic utilities (General Sans via @theme --font-sans)
+ */
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --leading-editorial: 1.65;
+  --leading-tight-display: 1.07;
+  --tracking-display: -0.02em;
 }
 
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Minimal base overrides: font stack only — does not replace Tailwind Preflight */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+}
+
+@layer components {
+  /* ——— Display ——— */
+  .type-display-hero {
+    font-size: clamp(1.875rem, 4vw + 0.75rem, 3.375rem);
+    line-height: var(--leading-tight-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* ——— Section hierarchy ——— */
+  .type-heading-section {
+    font-size: clamp(1.625rem, 2vw + 0.875rem, 2.25rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  @media (min-width: 768px) {
+    .type-heading-section {
+      font-size: clamp(2rem, 2.5vw + 0.75rem, 2.5rem);
+      line-height: 1.12;
+    }
+  }
+
+  /* ——— Ledes & body ——— */
+  .type-lede {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  @media (min-width: 768px) {
+    .type-lede {
+      font-size: 1.25rem;
+      line-height: 1.65;
+    }
+  }
+
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  .type-body-sm {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ——— Cards ——— */
+  .type-heading-card {
+    font-size: 1.125rem;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .type-heading-card-lg {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .type-card-body {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ——— Eyebrows & captions ——— */
+  .type-eyebrow-brand {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .type-caption {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .type-caption-badge {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* Small UI labels (non-uppercase), e.g. dashboard placeholders */
+  .type-meta {
+    font-size: 0.75rem;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* ——— Navigation ——— */
+  .type-nav-brand {
+    font-size: 1.125rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .type-nav-link {
+    font-size: 0.875rem;
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* ——— Buttons & CTAs (typography only; layout stays in components) ——— */
+  .type-btn {
+    font-size: 0.875rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .type-link-cta {
+    font-size: 0.875rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  /* ——— Footer ——— */
+  .type-footer {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .type-footer-link {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  /* ——— Trust / compact labels ——— */
+  .type-trust-label {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* ——— Platform flow pills ——— */
+  .type-label-pill {
+    font-size: 0.875rem;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .type-flow-step {
+    font-size: 0.875rem;
+    line-height: 1.35;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  /* ——— Vertical rhythm ——— */
+  .section-y {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-y {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .section-y-compact {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .stack-heading {
+    margin-bottom: 1rem;
+  }
+
+  .stack-lede {
+    margin-top: 1.25rem;
+  }
+
+  .stack-body {
+    margin-top: 1rem;
+  }
 }
 
 #root {

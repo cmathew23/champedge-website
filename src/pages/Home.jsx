@@ -3,6 +3,7 @@ import Footer from "../components/layout/Footer.jsx";
 import HeroSection from "../components/sections/HeroSection.jsx";
 import ProblemSection from "../components/sections/ProblemSection.jsx";
 import SolutionSection from "../components/sections/SolutionSection.jsx";
+import SportProofSection from "../components/sections/SportProofSection.jsx";
 import RoleBasedSection from "../components/sections/RoleBasedSection.jsx";
 import PlatformIntelligenceSection from "../components/sections/PlatformIntelligenceSection.jsx";
 import SupportedBySection from "../components/sections/SupportedBySection.jsx";
@@ -17,6 +18,7 @@ export default function Home() {
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
+        <SportProofSection />
         <RoleBasedSection />
         <PlatformIntelligenceSection />
         <SupportedBySection />

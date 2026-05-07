@@ -1,20 +1,17 @@
-import amexLogo from "../../assets/logos/amex.jpg";
+import amexLogo from "../../assets/logos/amex.png";
 
 export default function SupportedBySection() {
   return (
-    <section className="border-b border-slate-100 bg-white py-14">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto flex max-w-md flex-col items-center gap-5 text-center">
-          <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
-            Supported By
-          </p>
+    <section className="section-y-compact border-b border-slate-100 bg-white">
+      <div className="container mx-auto min-w-0 max-w-full px-4">
+        <div className="mx-auto flex w-full min-w-0 max-w-md flex-col items-center gap-5 text-center">
+          <p className="type-caption text-slate-500">SUPPORTED BY</p>
           <img
             src={amexLogo}
             alt="American Express"
-            width={960}
-            height={958}
-            className="h-12 w-auto max-w-[10rem] object-contain opacity-90 transition-opacity hover:opacity-100 sm:h-14"
-            decoding="async"
+            width={800}
+            height={798}
+            className="mx-auto h-20 w-auto max-w-full shrink-0 object-contain"
           />
         </div>
       </div>

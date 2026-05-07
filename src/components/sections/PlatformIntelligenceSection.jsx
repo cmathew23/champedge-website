@@ -2,7 +2,7 @@ const steps = [
   "Athlete Profile",
   "Workload Intelligence",
   "Goals & Seasons",
-  "AI Orchestration",
+  "Planning Intelligence",
   "Structured Training Plans",
 ];
 
@@ -10,7 +10,7 @@ export default function PlatformIntelligenceSection() {
   return (
     <section
       id="platform"
-      className="relative overflow-hidden border-y border-slate-100 bg-[linear-gradient(180deg,#fafafa_0%,#ffffff_45%,#fafafa_100%)] py-20 md:py-28"
+      className="section-y relative overflow-x-clip border-y border-slate-100 bg-[linear-gradient(180deg,#fafafa_0%,#ffffff_45%,#fafafa_100%)]"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
@@ -21,45 +21,49 @@ export default function PlatformIntelligenceSection() {
         }}
       />
 
-      <div className="container relative mx-auto px-4">
+      <div className="container relative mx-auto min-w-0 max-w-full px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h2 className="type-heading-section stack-heading text-balance text-slate-900">
             Platform intelligence, end to end
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            From structured profiles to governed AI orchestration—Peakflow is
+          <p className="type-lede stack-lede text-slate-600">
+            From structured profiles to planning intelligence, Peakflow is
             designed as a coherent operating system for athlete performance.
           </p>
         </div>
 
-        <div className="mt-14 overflow-x-auto pb-2">
-          <ol className="flex min-w-[52rem] items-center gap-2 px-1 md:min-w-0 md:flex-wrap md:justify-center md:gap-3">
-            {steps.map((label, index) => {
-              const isOrchestration = label === "AI Orchestration";
-              return (
-                <li key={label} className="flex items-center gap-2 md:gap-3">
-                  {index > 0 && (
+        <ol className="mx-auto mt-14 flex w-full max-w-md flex-col items-center gap-3 md:max-w-none md:flex-row md:flex-wrap md:justify-center md:gap-x-2 md:gap-y-3 lg:gap-x-3">
+          {steps.map((label, index) => {
+            return (
+              <li
+                key={label}
+                className="flex w-full flex-col items-center gap-2 md:w-auto md:max-w-none md:flex-row md:items-center md:gap-2 lg:gap-3"
+              >
+                {index > 0 && (
+                  <>
                     <span
-                      className="hidden text-slate-300 sm:inline"
+                      className="select-none text-center text-slate-300 md:hidden"
+                      aria-hidden
+                    >
+                      ↓
+                    </span>
+                    <span
+                      className="hidden shrink-0 select-none text-slate-300 md:inline"
                       aria-hidden
                     >
                       →
                     </span>
-                  )}
-                  <span
-                    className={`whitespace-nowrap rounded-xl px-4 py-3 text-center text-sm font-semibold ${
-                      isOrchestration
-                        ? "border-2 border-orange-500 bg-orange-500/10 text-slate-900"
-                        : "border border-slate-200 bg-white text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
-                    }`}
-                  >
-                    {label}
-                  </span>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+                  </>
+                )}
+                <span
+                  className="type-label-pill w-full max-w-md rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04)] md:w-auto md:max-w-none md:whitespace-nowrap"
+                >
+                  {label}
+                </span>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );

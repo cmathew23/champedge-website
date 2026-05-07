@@ -1,7 +1,5 @@
 import { ArrowRight } from "lucide-react";
 
-const APP_URL = "https://app.champedge.ai";
-
 const primaryBtn =
   "type-btn inline-flex items-center justify-center rounded-lg bg-orange-500 px-6 py-2.5 text-white transition-colors hover:bg-orange-600";
 
@@ -88,10 +86,10 @@ export default function HeroSection() {
             </p>
             <div className="mt-10 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <a
-                href={APP_URL}
+                href="/contact"
                 className={`${primaryBtn} w-full shrink-0 justify-center sm:w-auto`}
               >
-                Launch Peakflow
+                Request Demo
               </a>
               <a
                 href="/contact"

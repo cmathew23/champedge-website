@@ -1,8 +1,6 @@
 import champedgeWordmark from "../../assets/branding/champedge-wordmark.png";
 import { useLocation } from "react-router-dom";
 
-const APP_URL = "https://app.champedge.ai";
-
 const primaryBtn =
   "type-btn inline-flex items-center justify-center rounded-lg bg-orange-500 px-5 py-2 text-white transition-colors hover:bg-orange-600";
 
@@ -24,8 +22,8 @@ export default function Navbar() {
                 className="h-10 w-auto object-contain md:h-12 lg:h-14"
               />
             </a>
-            <a href={APP_URL} className={`${primaryBtn} md:hidden`}>
-              Launch Peakflow
+            <a href="/contact" className={`${primaryBtn} md:hidden`}>
+              Request Demo
             </a>
           </div>
 
@@ -61,8 +59,8 @@ export default function Navbar() {
             </a>
           </nav>
 
-          <a href={APP_URL} className={`${primaryBtn} hidden md:inline-flex`}>
-            Launch Peakflow
+          <a href="/contact" className={`${primaryBtn} hidden md:inline-flex`}>
+            Request Demo
           </a>
         </div>
       </div>

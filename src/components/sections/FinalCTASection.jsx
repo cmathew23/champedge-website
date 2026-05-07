@@ -1,5 +1,3 @@
-const APP_URL = "https://app.champedge.ai";
-
 const primaryBtn =
   "type-btn inline-flex items-center justify-center rounded-lg bg-orange-500 px-8 py-3 text-white transition-colors hover:bg-orange-600";
 
@@ -20,16 +18,16 @@ export default function FinalCTASection() {
           </p>
           <div className="mt-10 flex w-full min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
             <a
-              href={APP_URL}
+              href="/contact"
               className={`${primaryBtn} w-full shrink-0 sm:w-auto`}
             >
-              Launch Platform
+              Request Demo
             </a>
             <a
               href="/contact"
               className={`${outlineBtn} w-full shrink-0 sm:w-auto`}
             >
-              Request Demo
+              Contact ChampEdge
             </a>
           </div>
           <p className="type-caption-badge mx-auto mt-10 max-w-full rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 text-center text-slate-500">
